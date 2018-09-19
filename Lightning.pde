@@ -10,12 +10,17 @@ void setup(){
   noLoop();
 }
 void draw(){
-	//while(x < 300){}
+	while(startX < 300){
+		generateColor();
+	}
 }
 void mousePressed(){
 	redraw();
 }
 void generateColor(){
 	fill((int)(Math.random()*10), (int)(Math.random()*10), (int)(Math.random()*10));
+}
+int generateRandom(){
+	return (int)(Math.random()*10);
 }
 
