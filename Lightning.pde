@@ -4,14 +4,17 @@ int startY = 150;
 int endY = 150;
 void setup(){
   size(300,300);
-  
+
   strokeWeight(2);
   background(0);
   noLoop();
 }
 void draw(){
+  generateColor();
 	while(startX < 300){
-		generateColor();
+		endX = startX + generateRandom(10, 0);
+    endY = startY + generateRandom(19, -9);
+    line(startX,startY,endX,endY);
 	}
 }
 void mousePressed(){
@@ -20,7 +23,6 @@ void mousePressed(){
 void generateColor(){
 	fill((int)(Math.random()*10), (int)(Math.random()*10), (int)(Math.random()*10));
 }
-int generateRandom(){
-	return (int)(Math.random()*10);
+int generateRandom(int m, int b){
+	return (int)(Math.random() * m) + b;
 }
-
