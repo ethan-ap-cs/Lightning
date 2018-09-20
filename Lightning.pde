@@ -12,16 +12,19 @@ void setup(){
 void draw(){
   generateColor();
 	while(startX < 300){
-		endX = startX + generateRandom(10, 0);
+	startX = endX;
+    startY = endY;
+	endX = startX + generateRandom(10, 0);
     endY = startY + generateRandom(19, -9);
     line(startX,startY,endX,endY);
+
 	}
 }
 void mousePressed(){
 	redraw();
 }
 void generateColor(){
-	fill((int)(Math.random()*10), (int)(Math.random()*10), (int)(Math.random()*10));
+	fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 }
 int generateRandom(int m, int b){
 	return (int)(Math.random() * m) + b;
